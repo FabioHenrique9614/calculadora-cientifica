@@ -1,4 +1,4 @@
-print("Bem-Vindo(a)")
+print("Bem vindo(a)!")
 
-nome = "joao"
-print(nome)
+# selecao de operacao(MENU)
+escolha_usuario = int(input("1 - Soma 2 - Subtração 3 - Multiplicacao 4 - Divisão"))
