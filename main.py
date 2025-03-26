@@ -14,3 +14,5 @@ def menu():
         else:
             continue
 menu()
+
+print("teste")
