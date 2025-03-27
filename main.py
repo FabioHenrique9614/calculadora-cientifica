@@ -1,3 +1,4 @@
+import math as m # importacao de biblioteca math
 print("Bem vindo(a)!")
 
 
