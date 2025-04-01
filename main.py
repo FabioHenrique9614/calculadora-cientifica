@@ -1,12 +1,55 @@
-import math # importacao de biblioteca math
+import math
 
-def bhaskara(a, b, c):
-    delta = b**2 - 4*a*c  # Calcula o delta
+#MATHEUS
+def soma():
+    #codigo aqui
+    ...
+
+#GUI
+def subtracao():
+    #codigo aqui
+    ...
+
+#DANIEL
+def multiplicacao():
+    #codigo aqui
+    ...
+
+#DANIEL
+def divisao():
+    #codigo aqui
+    ...
+
+#FABIO
+def bhaskara():
+    #codigo aqui
+    ...
+
+#MATEUS
+def expressões_algébricas():
+    #codigo aqui
+    ...
     
-    if delta < 0:
-        return "Não há raízes reais"  # Caso o delta seja negativo
+#FABIO
+def proporcoes():
+    #codigo aqui
+    ...
+#TODOS
+def sistemas_lineares():
+    #codigo aqui
+    ...
+
+#MATHEUS
+def regra_de_tres():
+    #codigo aqui
+    ...
     
-    x1 = (-b + math.sqrt(delta)) / (2 * a)  # Primeira raiz
-    x2 = (-b - math.sqrt(delta)) / (2 * a)  # Segunda raiz
-    
-    return x1, x2  # Retorna as raízes"
+#MATEUS
+def porcentagem():
+    #codigo aqui
+    ...
+
+#GUI
+def conjuntos():
+    #codigo aqui
+    ...
