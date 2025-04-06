@@ -15,8 +15,19 @@ def subtracao():
 
 #DANIEL
 def multiplicacao():
-    #codigo aqui
-    ...
+        while True:
+            try:
+                num1 = int(input("Digite o primeiro número: "))
+                num2 = int(input("Digite o segundo número: "))
+    
+                resultado = num1 * num2
+
+                print("\n" + "-"*30)
+                print(f"A multiplicação de {num1} e {num2} vale {resultado}.")
+                print("-"*30)
+
+            except ValueError:
+                print("\nErro: Por favor, digite apenas números inteiros.")
 
 #DANIEL
 def divisao():
