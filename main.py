@@ -20,8 +20,18 @@ def multiplicacao():
 
 #DANIEL
 def divisao():
-    #codigo aqui
-    ...
+    while True:
+        try:
+            n1 = int(input('Digite o primeiro número: '))
+            n2 = int(input('Digite o segundo número: '))
+
+            if n2 == 0:
+                print('Erro: divisão por zero não é permitida.')
+            else:
+                resultado = n1 / n2
+                print(f'A divisão de {n1} por {n2} vale {resultado:.2f}')
+        except ValueError:
+            print('Erro: digite apenas números inteiros.')
 
 #FABIO
 def bhaskara():
