@@ -72,8 +72,16 @@ def expressões_algébricas():
     
 #FABIO
 def proporcoes():
-    #codigo aqui
-    ...
+    while True:  # Repete até o usuário digitar valores válidos
+        try:
+            ocorrencias = int(input("Número de ocorrências: "))
+            total = int(input("Total de observações: "))
+            if total == 0:
+                print("Erro: O total não pode ser zero. Tente novamente!\n")
+                continue  # Pula para a próxima iteração do loop
+            break  # Sai do loop se os valores forem válidos
+        except ValueError:
+            print("Erro: Digite apenas números inteiros. Tente novamente!\n")
 #TODOS
 def sistemas_lineares():
     #codigo aqui
