@@ -85,9 +85,17 @@ def regra_de_tres():
     ...
     
 #MATEUS
-def porcentagem():
-    #codigo aqui
-    ...
+def calcular_porcentagem():
+    try:
+        numero = float(input("Digite o número base: "))
+        porcentagem = float(input("Digite a porcentagem que deseja calcular: "))
+        resultado = (porcentagem / 100) * numero
+        print(f"{porcentagem}% de {numero} é igual = {resultado}")
+    except ValueError:
+        print("Por favor, digite apenas números válidos.")
+
+# Chamar a função
+calcular_porcentagem()
 
 #GUI
 def conjuntos():
