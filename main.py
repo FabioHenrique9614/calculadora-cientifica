@@ -109,7 +109,9 @@ def bhaskara():
     limpar_tela()
 
 # 6. Expressões algébricas
+# Função principal do módulo de expressões algébricas
 def expressoes_algebricas_avancadas():
+    # Função interna que exibe o menu específico para expressões algébricas
     def menu_expressao():
         print("\n--- MÓDULO DE EXPRESSÕES ALGÉBRICAS ---")
         print("1. Simplificar expressão")
@@ -121,37 +123,45 @@ def expressoes_algebricas_avancadas():
         menu_expressao()
         opcao = input("Escolha uma opção: ")
 
+        # Opção 1: simplificação de expressões (ex: x + x -> 2x)
         if opcao == '1':
             expressao = input("Digite a expressão para simplificar: ")
             try:
-                resultado = sym.simplify(sym.sympify(expressao))
+                resultado = sym.simplify(sym.sympify(expressao))  # Converte texto para expressão simbólica e simplifica
                 print("Resultado simplificado:", resultado)
-                adicionar_ao_historico(f"Simplificado: {expressao} = {resultado}")
+                adicionar_ao_historico(f"Simplificado: {expressao} = {resultado}")  # Adiciona ao histórico
             except Exception as erro:
                 print(f"Erro ao simplificar: {erro}")
 
+        # Opção 2: resolução de equações (ex: x**2 - 4 = 0)
         elif opcao == '2':
             equacao = input("Digite a equação (ex: x**2 - 4 = 0): ")
             try:
+                # Divide a equação em lado esquerdo e direito
                 esquerda, direita = equacao.split('=')
+                # Resolve a equação subtraindo os dois lados e igualando a zero
                 resultado = sym.solve(sym.sympify(esquerda) - sym.sympify(direita))
                 print("Soluções:", resultado)
                 adicionar_ao_historico(f"Equação: {equacao} -> Soluções: {resultado}")
             except Exception as erro:
                 print(f"Erro ao resolver: {erro}")
 
+        # Opção 3: fatoração de expressões (ex: x**2 - 9 -> (x - 3)(x + 3))
         elif opcao == '3':
             expressao = input("Digite a expressão para fatorar: ")
             try:
-                resultado = sym.factor(sym.sympify(expressao))
+                resultado = sym.factor(sym.sympify(expressao))  # Fatora a expressão algébrica
                 print("Expressão fatorada:", resultado)
                 adicionar_ao_historico(f"Fatorado: {expressao} = {resultado}")
             except Exception as erro:
                 print(f"Erro ao fatorar: {erro}")
 
+        # Opção 4: sair do menu e voltar ao principal
         elif opcao == '4':
             limpar_tela()
             break
+
+        # Qualquer outro valor: entrada inválida
         else:
             print("Opção inválida. Escolha entre 1 e 4.")
 
