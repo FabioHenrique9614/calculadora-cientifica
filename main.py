@@ -1,9 +1,12 @@
 import math
 
 #MATHEUS
-def soma():
-    #codigo aqui
-    ...
+def soma():    
+    numerosoma01 = int(input("digite um valor: "))
+    numerosoma02 = int(input("digite outro valor:")) 
+    resultado = numerosoma01 + numerosoma02 
+    print(f"a soma entre {numerosoma01} e {numerosoma02} Ã© igual a {resultado}")
+soma()
 
 #GUI
 def subtracao():
@@ -78,8 +81,17 @@ bhaskara()
 
 #MATEUS
 def expressões_algébricas():
-    #codigo aqui
-    ...
+    while True:
+        try:
+            a = float(input("Digite o valor de a: "))
+            b = float(input("Digite o valor de b: "))
+            c = float(input("Digite o valor de c: "))
+            break  # Sai do loop se os valores forem válidos
+        except ValueError:
+            print("Erro: Digite apenas números. Tente novamente!\n")
+
+    resultado = (a + b) * c
+    print(f"O resultado da expressão (a + b) * c é: {resultado:.2f}")
     
 #FABIO
 def proporcoes():
@@ -95,13 +107,38 @@ def proporcoes():
             print("Erro: Digite apenas números inteiros. Tente novamente!\n")
 #TODOS
 def sistemas_lineares():
-    #codigo aqui
-    ...
+    while True:
+        try:
+            a = float(input("Digite o valor de a: "))
+            b = float(input("Digite o valor de b: "))
+            c = float(input("Digite o valor de c: "))
+            d = float(input("Digite o valor de d: "))
+            e = float(input("Digite o valor de e: "))
+            f = float(input("Digite o valor de f: "))
+            break  # Sai do loop se os valores forem válidos
+        except ValueError:
+            print("Erro: Digite apenas números. Tente novamente!\n")
+
+    det = a * d - b * c
+
+    if det == 0:
+        print("O sistema não possui solução única.")
+    else:
+        x = (e * d - b * f) / det
+        y = (a * f - e * c) / det
+        print(f"Solução do sistema: x = {x:.2f}, y = {y:.2f}")
 
 #MATHEUS
 def regra_de_tres():
-    #codigo aqui
-    ...
+    try:
+        valor1 = float(input("Digite o primeiro valor: "))
+        valor2 = float(input("Digite o segundo valor: "))
+        porcentagem = float(input("Digite a porcentagem: "))
+
+        resultado = (valor2 * porcentagem) / valor1
+        print(f"O resultado da regra de três é: {resultado:.2f}")
+    except ValueError:
+        print("Por favor, digite apenas números válidos.")
     
 #MATEUS
 def calcular_porcentagem():
@@ -135,5 +172,3 @@ def conjuntos():
         }
 
         return resultado
-
-
