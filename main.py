@@ -154,3 +154,51 @@ def conjuntos():
             "c2 é subconjunto de c1": c2.issubset(c1),
             "são disjuntos": c1.isdisjoint(c2)
         }
+# MENU INTERATIVO COM WHILE
+def menu():
+    while True:
+        print("\n--- MENU DE OPERAÇÕES ---")
+        print("1 - Soma")
+        print("2 - Subtração")
+        print("3 - Multiplicação")
+        print("4 - Divisão")
+        print("5 - Bhaskara")
+        print("6 - Expressões Algébricas")
+        print("7 - Proporções")
+        print("8 - Sistemas Lineares")
+        print("9 - Regra de Três")
+        print("10 - Calcular Porcentagem")
+        print("11 - Conjuntos")
+        print("0 - Sair")
+
+        opcao = input("Escolha uma opção: ")
+
+        if opcao == '1':
+            soma()
+        elif opcao == '2':
+            subtracao()
+        elif opcao == '3':
+            multiplicacao()
+        elif opcao == '4':
+            divisao()
+        elif opcao == '5':
+            bhaskara()
+        elif opcao == '6':
+            expressoes_algebricas()
+        elif opcao == '7':
+            proporcoes()
+        elif opcao == '8':
+            sistemas_lineares()
+        elif opcao == '9':
+            regra_de_tres()
+        elif opcao == '10':
+            calcular_porcentagem()
+        elif opcao == '11':
+            conjuntos()
+        elif opcao == '0':
+            print("Encerrando o programa. Até mais!")
+            break
+        else:
+            print("Opção inválida. Tente novamente.")
+# INICIAR O PROGRAMA
+menu()
