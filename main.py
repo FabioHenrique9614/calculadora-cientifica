@@ -1,126 +1,116 @@
 import math
 
-#MATHEUS
-def soma():    
-    numerosoma01 = int(input("digite um valor: "))
-    numerosoma02 = int(input("digite outro valor:")) 
-    resultado = numerosoma01 + numerosoma02 
-    print(f"a soma entre {numerosoma01} e {numerosoma02} Ã© igual a {resultado}")
-soma()
+# MATHEUS
+def soma():
+    try:
+        num1 = float(input("Digite um valor: "))
+        num2 = float(input("Digite outro valor: "))
+        resultado = num1 + num2
+        print(f"A soma entre {num1} e {num2} é igual a {resultado}")
+    except ValueError:
+        print("Por favor, digite apenas números válidos.")
 
-#GUI
+# GUI
 def subtracao():
-    num1 = float(input("Digite o primeiro número: "))
-    num2 = float(input("Digite o segundo número: "))
-    resultado = num1 - num2
-    print(f"A subtração de {num1} e {num2} é: {resultado}")
+    try:
+        num1 = float(input("Digite o primeiro número: "))
+        num2 = float(input("Digite o segundo número: "))
+        resultado = num1 - num2
+        print(f"A subtração de {num1} e {num2} é: {resultado}")
+    except ValueError:
+        print("Por favor, digite apenas números válidos.")
 
-
-#DANIEL
+# DANIEL
 def multiplicacao():
-        while True:
-            try:
-                num1 = int(input("Digite o primeiro número: "))
-                num2 = int(input("Digite o segundo número: "))
-    
-                resultado = num1 * num2
+    try:
+        num1 = float(input("Digite o primeiro número: "))
+        num2 = float(input("Digite o segundo número: "))
+        resultado = num1 * num2
+        print(f"\n{'-'*30}\nA multiplicação de {num1} e {num2} vale {resultado}.\n{'-'*30}")
+    except ValueError:
+        print("Por favor, digite apenas números válidos.")
 
-                print("\n" + "-"*30)
-                print(f"A multiplicação de {num1} e {num2} vale {resultado}.")
-                print("-"*30)
-
-            except ValueError:
-                print("\nErro: Por favor, digite apenas números inteiros.")
-
-#DANIEL
+# DANIEL
 def divisao():
-    while True:
-        try:
-            n1 = int(input('Digite o primeiro número: '))
-            n2 = int(input('Digite o segundo número: '))
+    try:
+        n1 = float(input("Digite o primeiro número: "))
+        n2 = float(input("Digite o segundo número: "))
+        if n2 == 0:
+            print("Erro: divisão por zero não é permitida.")
+        else:
+            resultado = n1 / n2
+            print(f"A divisão de {n1} por {n2} vale {resultado:.2f}")
+    except ValueError:
+        print("Por favor, digite apenas números válidos.")
 
-            if n2 == 0:
-                print('Erro: divisão por zero não é permitida.')
-            else:
-                resultado = n1 / n2
-                print(f'A divisão de {n1} por {n2} vale {resultado:.2f}')
-        except ValueError:
-            print('Erro: digite apenas números inteiros.')
-
-#FABIO
+# FABIO
 def bhaskara():
     while True:
         try:
-            a = float(input("Digite o valor de a"))
+            a = float(input("Digite o valor de a: "))
             if a == 0:
-                print('"a" não pode ser 0. Tente novamente')
+                print('"a" não pode ser 0. Tente novamente.')
                 continue
-            b = float(input("Digite o valor de b"))
-            c = float(input("Digite o valor de c"))
+            b = float(input("Digite o valor de b: "))
+            c = float(input("Digite o valor de c: "))
         except ValueError:
-            print("Erro: Digite apenas números. Tente novamente.")
+            print("Erro: Digite apenas números.")
             continue
 
-        delta = (b**2) -4 * a * c
+        delta = (b**2) - 4 * a * c
         print(f"Valor de DELTA é {delta}")
 
-        if delta >= 0:
-            break
-        else:
-            print(f"Delta negativo. Não há raizes reais. Tente outros coeficientes.\n")
-    
+        if delta < 0:
+            print("Delta negativo. Não há raízes reais. Tente outros coeficientes.\n")
+            continue
+        break
+
     if delta > 0:
         x1 = (-b + math.sqrt(delta)) / (2 * a)
         x2 = (-b - math.sqrt(delta)) / (2 * a)
-        print(f"Duas raizes reais: X1 = {x1:.2f}, X2 = {x2:.2f}")
+        print(f"Duas raízes reais: X1 = {x1:.2f}, X2 = {x2:.2f}")
     else:
         x = -b / (2 * a)
         print(f"Raiz dupla: x = {x:.2f}")
 
-bhaskara()
+# MATEUS
+def expressoes_algebricas():
+    try:
+        a = float(input("Digite o valor de a: "))
+        b = float(input("Digite o valor de b: "))
+        c = float(input("Digite o valor de c: "))
+        resultado = (a + b) * c
+        print(f"O resultado da expressão (a + b) * c é: {resultado:.2f}")
+    except ValueError:
+        print("Erro: Digite apenas números válidos.")
 
-#MATEUS
-def expressões_algébricas():
-    while True:
-        try:
-            a = float(input("Digite o valor de a: "))
-            b = float(input("Digite o valor de b: "))
-            c = float(input("Digite o valor de c: "))
-            break  # Sai do loop se os valores forem válidos
-        except ValueError:
-            print("Erro: Digite apenas números. Tente novamente!\n")
-
-    resultado = (a + b) * c
-    print(f"O resultado da expressão (a + b) * c é: {resultado:.2f}")
-    
-#FABIO
+# FABIO
 def proporcoes():
-    while True:  # Repete até o usuário digitar valores válidos
-        try:
-            ocorrencias = int(input("Número de ocorrências: "))
-            total = int(input("Total de observações: "))
-            if total == 0:
-                print("Erro: O total não pode ser zero. Tente novamente!\n")
-                continue  # Pula para a próxima iteração do loop
-            break  # Sai do loop se os valores forem válidos
-        except ValueError:
-            print("Erro: Digite apenas números inteiros. Tente novamente!\n")
-#TODOS
+    try:
+        ocorrencias = int(input("Número de ocorrências: "))
+        total = int(input("Total de observações: "))
+        if total == 0:
+            print("Erro: O total não pode ser zero.")
+            return
+        proporcao = ocorrencias / total
+        print(f"A proporção é: {proporcao:.2f}")
+    except ValueError:
+        print("Erro: Digite apenas números inteiros.")
+
+#todos
 def sistemas_lineares():
-    while True:
-        try:
-            a = float(input("Digite o valor de a: "))
-            b = float(input("Digite o valor de b: "))
-            c = float(input("Digite o valor de c: "))
-            d = float(input("Digite o valor de d: "))
-            e = float(input("Digite o valor de e: "))
-            f = float(input("Digite o valor de f: "))
-            break  # Sai do loop se os valores forem válidos
-        except ValueError:
-            print("Erro: Digite apenas números. Tente novamente!\n")
+    try:
+        a = float(input("Digite o valor de a: "))
+        b = float(input("Digite o valor de b: "))
+        c = float(input("Digite o valor de c: "))
+        d = float(input("Digite o valor de d: "))
+        e = float(input("Digite o valor de e: "))
+        f = float(input("Digite o valor de f: "))
+    except ValueError:
+        print("Erro: Digite apenas números.")
+        return
 
     det = a * d - b * c
-
     if det == 0:
         print("O sistema não possui solução única.")
     else:
@@ -128,39 +118,33 @@ def sistemas_lineares():
         y = (a * f - e * c) / det
         print(f"Solução do sistema: x = {x:.2f}, y = {y:.2f}")
 
-#MATHEUS
+# MATHEUS
 def regra_de_tres():
     try:
         valor1 = float(input("Digite o primeiro valor: "))
         valor2 = float(input("Digite o segundo valor: "))
         porcentagem = float(input("Digite a porcentagem: "))
-
         resultado = (valor2 * porcentagem) / valor1
         print(f"O resultado da regra de três é: {resultado:.2f}")
     except ValueError:
         print("Por favor, digite apenas números válidos.")
-    
-#MATEUS
+
+# MATHEUS
 def calcular_porcentagem():
     try:
         numero = float(input("Digite o número base: "))
         porcentagem = float(input("Digite a porcentagem que deseja calcular: "))
         resultado = (porcentagem / 100) * numero
-        print(f"{porcentagem}% de {numero} é igual = {resultado}")
+        print(f"{porcentagem}% de {numero} é igual a {resultado:.2f}")
     except ValueError:
         print("Por favor, digite apenas números válidos.")
 
-# Chamar a função
-calcular_porcentagem()
-
-#GUI
+# GUI
 def conjuntos():
     def calcular_conjuntos(conjunto1, conjunto2):
-    # Convertendo listas para conjuntos (caso o usuário passe listas)
         c1 = set(conjunto1)
         c2 = set(conjunto2)
-        
-        resultado = {
+        return {
             "união": c1 | c2,
             "interseção": c1 & c2,
             "diferença (c1 - c2)": c1 - c2,
@@ -170,5 +154,3 @@ def conjuntos():
             "c2 é subconjunto de c1": c2.issubset(c1),
             "são disjuntos": c1.isdisjoint(c2)
         }
-
-        return resultado
