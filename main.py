@@ -118,5 +118,22 @@ calcular_porcentagem()
 
 #GUI
 def conjuntos():
+    def calcular_conjuntos(conjunto1, conjunto2):
+    # Convertendo listas para conjuntos (caso o usuário passe listas)
+    c1 = set(conjunto1)
+    c2 = set(conjunto2)
     
-    ...
+    resultado = {
+        "união": c1 | c2,
+        "interseção": c1 & c2,
+        "diferença (c1 - c2)": c1 - c2,
+        "diferença (c2 - c1)": c2 - c1,
+        "diferença simétrica": c1 ^ c2,
+        "c1 é subconjunto de c2": c1.issubset(c2),
+        "c2 é subconjunto de c1": c2.issubset(c1),
+        "são disjuntos": c1.isdisjoint(c2)
+    }
+
+    return resultado
+
+
