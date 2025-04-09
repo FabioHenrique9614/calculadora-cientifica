@@ -234,6 +234,25 @@ def calcular_porcentagem():
         print("Por favor, digite apenas números válidos.")
     input("\nPressione Enter para continuar...")
     limpar_tela()
+    
+    def conjuntos():
+        def calcular_conjuntos(conjunto1, conjunto2):
+        # Convertendo listas para conjuntos (caso o usuário passe listas)
+            c1 = set(conjunto1)
+            c2 = set(conjunto2)
+        
+            resultado = {
+                "união": c1 | c2,
+                "interseção": c1 & c2,
+                "diferença (c1 - c2)": c1 - c2,
+                "diferença (c2 - c1)": c2 - c1,
+                "diferença simétrica": c1 ^ c2,
+                "c1 é subconjunto de c2": c1.issubset(c2),
+                "c2 é subconjunto de c1": c2.issubset(c1),
+                "são disjuntos": c1.isdisjoint(c2)
+            }
+
+        return resultado
 
 # 11. Ver histórico
 def mostrar_historico():
@@ -260,7 +279,8 @@ def menu():
         print("8 - Sistemas lineares")
         print("9 - Regra de três")
         print("10 - Calcular porcentagem")
-        print("11 - Ver histórico")
+        print("11 - conjuntos")
+        print("12 - Ver histórico")
         print("0 - Sair")
         opcao = input("Escolha uma opção: ")
 
@@ -287,6 +307,8 @@ def menu():
         elif opcao == '10':
             calcular_porcentagem()
         elif opcao == '11':
+            conjuntos()
+        elif opcao == '12':
             mostrar_historico()
         elif opcao == '0':
             print("Saindo...")
