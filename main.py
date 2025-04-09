@@ -8,10 +8,7 @@ historico = []
 
 # Função para limpar a tela
 def limpar_tela():
-    if platform.system() == "Windows":
-        os.system('cls')
-    else:
-        os.system('clear')
+    os.system('cls' if platform.system() == "Windows" else 'clear')
 
 # Função para adicionar ao histórico
 def adicionar_ao_historico(operacao):
@@ -109,9 +106,7 @@ def bhaskara():
     limpar_tela()
 
 # 6. Expressões algébricas
-# Função principal do módulo de expressões algébricas
 def expressoes_algebricas_avancadas():
-    # Função interna que exibe o menu específico para expressões algébricas
     def menu_expressao():
         print("\n--- MÓDULO DE EXPRESSÕES ALGÉBRICAS ---")
         print("1. Simplificar expressão")
@@ -123,45 +118,37 @@ def expressoes_algebricas_avancadas():
         menu_expressao()
         opcao = input("Escolha uma opção: ")
 
-        # Opção 1: simplificação de expressões (ex: x + x -> 2x)
         if opcao == '1':
             expressao = input("Digite a expressão para simplificar: ")
             try:
-                resultado = sym.simplify(sym.sympify(expressao))  # Converte texto para expressão simbólica e simplifica
+                resultado = sym.simplify(sym.sympify(expressao))
                 print("Resultado simplificado:", resultado)
-                adicionar_ao_historico(f"Simplificado: {expressao} = {resultado}")  # Adiciona ao histórico
+                adicionar_ao_historico(f"Simplificado: {expressao} = {resultado}")
             except Exception as erro:
                 print(f"Erro ao simplificar: {erro}")
 
-        # Opção 2: resolução de equações (ex: x**2 - 4 = 0)
         elif opcao == '2':
             equacao = input("Digite a equação (ex: x**2 - 4 = 0): ")
             try:
-                # Divide a equação em lado esquerdo e direito
                 esquerda, direita = equacao.split('=')
-                # Resolve a equação subtraindo os dois lados e igualando a zero
                 resultado = sym.solve(sym.sympify(esquerda) - sym.sympify(direita))
                 print("Soluções:", resultado)
                 adicionar_ao_historico(f"Equação: {equacao} -> Soluções: {resultado}")
             except Exception as erro:
                 print(f"Erro ao resolver: {erro}")
 
-        # Opção 3: fatoração de expressões (ex: x**2 - 9 -> (x - 3)(x + 3))
         elif opcao == '3':
             expressao = input("Digite a expressão para fatorar: ")
             try:
-                resultado = sym.factor(sym.sympify(expressao))  # Fatora a expressão algébrica
+                resultado = sym.factor(sym.sympify(expressao))
                 print("Expressão fatorada:", resultado)
                 adicionar_ao_historico(f"Fatorado: {expressao} = {resultado}")
             except Exception as erro:
                 print(f"Erro ao fatorar: {erro}")
 
-        # Opção 4: sair do menu e voltar ao principal
         elif opcao == '4':
             limpar_tela()
             break
-
-        # Qualquer outro valor: entrada inválida
         else:
             print("Opção inválida. Escolha entre 1 e 4.")
 
@@ -182,7 +169,7 @@ def proporcoes():
     input("\nPressione Enter para continuar...")
     limpar_tela()
 
-# 8. Sistemas Lineares (2x2)
+# 8. Sistemas Lineares
 def sistemas_lineares():
     try:
         a = float(input("Digite o valor de a: "))
@@ -234,27 +221,36 @@ def calcular_porcentagem():
         print("Por favor, digite apenas números válidos.")
     input("\nPressione Enter para continuar...")
     limpar_tela()
-    
-    def conjuntos():
-        def calcular_conjuntos(conjunto1, conjunto2):
-        # Convertendo listas para conjuntos (caso o usuário passe listas)
-            c1 = set(conjunto1)
-            c2 = set(conjunto2)
-        
-            resultado = {
-                "união": c1 | c2,
-                "interseção": c1 & c2,
-                "diferença (c1 - c2)": c1 - c2,
-                "diferença (c2 - c1)": c2 - c1,
-                "diferença simétrica": c1 ^ c2,
-                "c1 é subconjunto de c2": c1.issubset(c2),
-                "c2 é subconjunto de c1": c2.issubset(c1),
-                "são disjuntos": c1.isdisjoint(c2)
-            }
 
-        return resultado
+# 11. Conjuntos
+def conjuntos():
+    try:
+        conjunto1 = input("Digite os elementos do primeiro conjunto separados por vírgula: ").split(',')
+        conjunto2 = input("Digite os elementos do segundo conjunto separados por vírgula: ").split(',')
 
-# 11. Ver histórico
+        c1 = set(map(str.strip, conjunto1))
+        c2 = set(map(str.strip, conjunto2))
+
+        resultado = {
+            "união": c1 | c2,
+            "interseção": c1 & c2,
+            "diferença (c1 - c2)": c1 - c2,
+            "diferença (c2 - c1)": c2 - c1,
+            "diferença simétrica": c1 ^ c2,
+            "c1 é subconjunto de c2": c1.issubset(c2),
+            "c2 é subconjunto de c1": c2.issubset(c1),
+            "são disjuntos": c1.isdisjoint(c2)
+        }
+
+        for chave, valor in resultado.items():
+            print(f"{chave}: {valor}")
+        adicionar_ao_historico(f"Operações com conjuntos: {resultado}")
+    except Exception as erro:
+        print(f"Erro: {erro}")
+    input("\nPressione Enter para continuar...")
+    limpar_tela()
+
+# 12. Ver histórico
 def mostrar_historico():
     print("\n--- HISTÓRICO DE OPERAÇÕES ---")
     if not historico:
@@ -279,7 +275,7 @@ def menu():
         print("8 - Sistemas lineares")
         print("9 - Regra de três")
         print("10 - Calcular porcentagem")
-        print("11 - conjuntos")
+        print("11 - Conjuntos")
         print("12 - Ver histórico")
         print("0 - Sair")
         opcao = input("Escolha uma opção: ")
