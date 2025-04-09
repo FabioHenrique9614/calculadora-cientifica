@@ -8,26 +8,29 @@ Uma calculadora científica simples, funcional e interativa, desenvolvida em Pyt
 
 A calculadora oferece diversas operações matemáticas e recursos úteis, incluindo:
 
-- ✏️ Operações básicas: adição, subtração, multiplicação e divisão
-- 🧮 Bhaskara (equações quadráticas)
+- ✏️ Operações básicas: adição, subtração, multiplicação e divisão  
+- 🧮 Bhaskara (equações quadráticas)  
 - 🧠 Expressões algébricas:
   - Simplificação
   - Resolução de equações
-  - Fatoração
-- 📊 Proporções
-- 🔗 Sistemas Lineares (2x2)
-- 📐 Regra de três
-- 📉 Cálculo de porcentagens
-- 📚 Histórico de operações realizadas
+  - Fatoração  
+- 📊 Proporções  
+- 🔗 Sistemas Lineares (2x2)  
+- 📐 Regra de três  
+- 📉 Cálculo de porcentagens  
+- 🧩 Conjuntos (união, interseção, diferença, subconjunto, etc.)  
+- 🔢 MMC (Mínimo Múltiplo Comum) e MDC (Máximo Divisor Comum)  
+- ⚡ Potência  
+- 📚 Histórico de operações realizadas  
 
 ---
 
 ## 🛠️ Tecnologias Utilizadas
 
-- **Python 3** – Linguagem principal do projeto
-- **math** – Operações matemáticas
-- **os** & **platform** – Limpeza de tela e identificação do sistema operacional
-- **sympy** – Biblioteca simbólica para manipulação de expressões algébricas
+- **Python 3** – Linguagem principal do projeto  
+- **math** – Operações matemáticas  
+- **os** & **platform** – Limpeza de tela e identificação do sistema operacional  
+- **sympy** – Biblioteca simbólica para manipulação de expressões algébricas  
 
 ---
 
