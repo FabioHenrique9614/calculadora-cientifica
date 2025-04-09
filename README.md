@@ -1,33 +1,39 @@
-# 📱 Calculadora Científica  
+# 📱 Calculadora Científica em Python
 
-Uma calculadora científica simples e eficiente, desenvolvida em Python para realizar operações matemáticas.  
+Uma calculadora científica simples, funcional e interativa, desenvolvida em Python. Ideal para estudantes e entusiastas da matemática que desejam resolver problemas de forma rápida diretamente pelo terminal.
 
-## 📌 Funcionalidades  
+---
 
-- Operações básicas (+, -, *, /)  
-- Bhaskara  
-- Expressões algébricas  
-- Proporções  
-- Sistemas lineares (2x2)  
-- Regra de três  
-- Calcular porcentagem  
-- Histórico  
+## 📌 Funcionalidades
 
-## 🛠️ Tecnologias Utilizadas  
+A calculadora oferece diversas operações matemáticas e recursos úteis, incluindo:
 
-- **Python 3** – Linguagem principal do projeto  
-- **math** – Biblioteca para operações matemáticas básicas  
-- **os** – Permite interagir com o sistema operacional, como manipular arquivos e pastas  
-- **platform** – Usada para identificar o sistema operacional e informações do ambiente  
+- ✏️ Operações básicas: adição, subtração, multiplicação e divisão
+- 🧮 Bhaskara (equações quadráticas)
+- 🧠 Expressões algébricas:
+  - Simplificação
+  - Resolução de equações
+  - Fatoração
+- 📊 Proporções
+- 🔗 Sistemas Lineares (2x2)
+- 📐 Regra de três
+- 📉 Cálculo de porcentagens
+- 📚 Histórico de operações realizadas
 
-## ▶️ Como Usar  
+---
 
-Após abrir o terminal e executar o programa, será exibido um menu com diversas opções matemáticas.  
-Digite o número correspondente à operação desejada (como soma, bhaskara, porcentagem, etc.), insira os valores solicitados e o resultado será mostrado na tela.  
-Você pode repetir esse processo quantas vezes quiser, até escolher a opção para sair.  
+## 🛠️ Tecnologias Utilizadas
 
-## 📦 Como Executar  
+- **Python 3** – Linguagem principal do projeto
+- **math** – Operações matemáticas
+- **os** & **platform** – Limpeza de tela e identificação do sistema operacional
+- **sympy** – Biblioteca simbólica para manipulação de expressões algébricas
 
-1. Clone o repositório:  
-   ```bash  
-   git clone https://github.com/FabioHenrique9614/calculadora-cientifica.git  
+---
+
+## ▶️ Como Usar
+
+1. Certifique-se de ter o Python instalado (versão 3.6 ou superior).
+2. Clone o repositório:
+   ```bash
+   git clone https://github.com/FabioHenrique9614/calculadora-cientifica.git
